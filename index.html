@@ -54,6 +54,18 @@
   .hero .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .hero .note { margin-top: 16px; }
 
+  /* "Coming soon" pill — app in review, no store URL yet. */
+  .soon { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
+          font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+          color: var(--ink); border: 1px solid color-mix(in srgb, var(--brand) 55%, transparent);
+          background: color-mix(in srgb, var(--brand) 12%, transparent);
+          padding: 7px 15px; border-radius: 999px; }
+  .soon .pulse2 { width: 7px; height: 7px; border-radius: 50%; background: var(--brand); flex: none;
+          box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 60%, transparent); animation: pulse2 2.2s infinite; }
+  @keyframes pulse2 { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 55%, transparent); }
+          70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+  @media (prefers-reduced-motion: reduce) { .soon .pulse2 { animation: none; } }
+
   .shot-hero { margin: 8px auto 0; }
   .shot-hero img { width: 100%; border-radius: 14px; border: 1px solid var(--line); display: block; }
 
@@ -102,6 +114,7 @@
     <a class="btn" href="#">Download on the Mac App Store</a>
     <a class="btn ghost" href="#features">See features</a>
   </div>
+  <div class="soon"><span class="pulse2"></span>Coming soon · pending App Store review</div>
   <p class="note mono">$7.99 · one purchase · no subscriptions</p>
 </div></header>
 
@@ -135,7 +148,8 @@
 <section><div class="wrap">
   <div class="closer">
     <h2>Preserve and present<br>any website.</h2>
-    <a class="btn" href="#">Download on the Mac App Store</a>
+    <div><a class="btn" href="#">Download on the Mac App Store</a></div>
+    <div class="soon" style="margin-top:18px"><span class="pulse2"></span>Coming soon · pending App Store review</div>
   </div>
 </div></section>
 
